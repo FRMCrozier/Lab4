@@ -10,10 +10,13 @@ public class Main {
     /**
      * Базовый уровень. Вариант 3. Задание: Вывести данные о книгах, в которых количество страниц больше 150.
      */
+    public static final int PAGES_START_LIMIT = 150;
+    public static final int FILM_LENGHT_START_LIMIT = 100;
+    public static final int HOURS_START_LIMIT = 18;
+    public static final int MINUTES_START_LIMIT = 0;
     public static void More150Pages(Books [] book){
-        System.out.println("\nBooks with more than 150 pages:");
         for (int i = 0; i < book.length; i++){
-            if(book[i].getPages() > 150)
+            if(book[i].getPages() > PAGES_START_LIMIT)
                 System.out.println("\n" + book[i].ToString());
         }
         }
@@ -25,11 +28,10 @@ public class Main {
         LocalDateTime dt;
         int lenght;
         var yesno = false;
-        System.out.print("\n1 h 40 min long films starting after 18:00: ");
         for (int i = 0; i < movie.length; i++){
             lenght = movie[i].getLength();
             dt = movie[i].getSeansDate();
-            if(lenght > 100 && dt.getHour() >= 18 && dt.getMinute() > 0){
+            if(lenght > FILM_LENGHT_START_LIMIT && dt.getHour() >= HOURS_START_LIMIT && dt.getMinute() > MINUTES_START_LIMIT){
                 System.out.println("\n" + movie[i].ToString());
                 yesno = true;
             }
@@ -71,6 +73,7 @@ public class Main {
         for (int i = 0; i < book.length; i++){
                 System.out.println("\n" + book[i].ToString());
         }
+        System.out.println("\nBooks with more than 150 pages:");
         More150Pages(book);
 
         Cinema [] movie = new Cinema[9];
@@ -109,6 +112,7 @@ public class Main {
         for (int i = 0; i < movie.length; i++){
             System.out.println("\n" + movie[i].ToString());
         }
+        System.out.print("\n1 h 40 min long films starting after 18:00: ");
         GetMovies(movie);
     }
 }
