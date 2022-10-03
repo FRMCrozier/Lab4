@@ -5,6 +5,5 @@ enum FilmGenres {
     fantasy, thriller,
     action, adventure,
     historical, drama,
-    cartoon, arthouse,
-    western
+    cartoon, arthouse, western
 }
