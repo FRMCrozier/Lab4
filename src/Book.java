@@ -81,7 +81,8 @@ public class Book {
         setYear(year);
     }
 
-    public String ToString() {
-        return "Author: " + author + "\nTitle: " + name + "\nNumber of pages: " + pages + "\nEdition: " + edition + "\nRelease year: " + year;
+    @Override
+    public String toString() {
+        return "Author: " + author + "\nTitle: " + name + "\nNumber of pages: " + pages + "\nEdition: " + edition + "\nRelease year: " + year + "\n";
     }
 }

@@ -86,8 +86,9 @@ public class Cinema {
         setBudget(budget);
     }
 
-    public String ToString() {
-        return "Movie title: " + title + "\nSession date: " + seansDate + "\nLength: " + length + " min" + "\nMovie genre: " + genre + "\nBudget: " + budget;
+    @Override
+    public String toString() {
+        return "Movie title: " + title + "\nSession date: " + seansDate + "\nLength: " + length + " min" + "\nMovie genre: " + genre + "\nBudget: " + budget + "\n";
     }
 
 }

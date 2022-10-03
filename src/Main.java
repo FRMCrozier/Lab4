@@ -1,44 +1,7 @@
 import java.time.LocalDateTime;
 import java.time.Month;
-import java.util.Arrays;
 
 public class Main {
-
-    /**
-     * Базовый уровень. Вариант 3. Задание: Вывести данные о книгах, в которых количество страниц больше 150.
-     */
-    public static final int PAGES_START_LIMIT = 150;
-    public static final int FILM_LENGHT_START_LIMIT = 100;
-    public static final int HOURS_START_LIMIT = 18;
-    public static final int MINUTES_START_LIMIT = 0;
-
-    public static void More150Pages(Book[] books) {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i].getPages() > PAGES_START_LIMIT)
-                System.out.println("\n" + books[i].ToString());
-        }
-    }
-
-    /**
-     * Средний уровень. Вариант 3. Задание: Вывести данные о фильмах, начинающихся после 18:00
-     * и продолжительностью сеанса более 1 часа 40 минут.
-     */
-    public static void GetMovies(Cinema[] movies) {
-        LocalDateTime dt;
-        int lenght;
-        var yesno = false;
-        for (int i = 0; i < movies.length; i++) {
-            lenght = movies[i].getLength();
-            dt = movies[i].getSeansDate();
-            if (lenght > FILM_LENGHT_START_LIMIT && dt.getHour() >= HOURS_START_LIMIT && dt.getMinute() > MINUTES_START_LIMIT) {
-                System.out.println("\n" + movies[i].ToString());
-                yesno = true;
-            }
-        }
-        if (!yesno) {
-            System.out.print("None");
-        }
-    }
 
 
     public static void main(String[] args) {
@@ -67,10 +30,14 @@ public class Main {
         books[5].setName("Something Without Values");
         System.out.println("ALL BOOKS:");
         for (int i = 0; i < books.length; i++) {
-            System.out.println("\n" + books[i].ToString());
+            System.out.println("\n" + books[i]);
         }
         System.out.println("\nBooks with more than 150 pages:");
-        More150Pages(books);
+        BooksForBook books2 = new BooksForBook();
+        for (int i = 0; i < books.length; i++) {
+            books2.addBook(books[i]);
+        }
+        System.out.println(books2.More150Pages(150));
 
         Cinema[] movies = new Cinema[9];
         /**
@@ -106,14 +73,14 @@ public class Main {
         movies[8].setTitle("Movie Without Values");
         System.out.println("\nALL MOVIES:");
         for (int i = 0; i < movies.length; i++) {
-            System.out.println("\n" + movies[i].ToString());
+            System.out.println("\n" + movies[i]);
         }
         System.out.print("\n1 h 40 min long films starting after 18:00: ");
-        GetMovies(movies);
+        MoviesForCinema cinemas = new MoviesForCinema();
+        for (int i = 0; i < movies.length; i++) {
+            cinemas.addMovie(movies[i]);
+        }
+        System.out.println(cinemas.Sorting(100, 18, 0));
 
-        Books150 books150 = new Books150();
-           books150.addBook(books[2]);
-           books150.addBook(books[3]);
-        System.out.println(books150.More150Pages(PAGES_START_LIMIT));
     }
 }
