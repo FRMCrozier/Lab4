@@ -41,23 +41,7 @@ public class Main {
     /**
      * Пример использовани Enum
      */
-    enum FilmGenres {
-        horror,
-        musical,
-        crime,
-        comedy,
-        romance,
-        scifi,
-        fantasy,
-        thriller,
-        action,
-        adventure,
-        historical,
-        drama,
-        cartoon,
-        arthouse,
-        western
-    }
+
 
     public static void main(String[] args) {
         Books [] book = new Books[6];
@@ -93,29 +77,29 @@ public class Main {
         /**
          * Пример с подходящим к условию времени, но меньшей продолжительностью
          */
-        movie[0] = new Cinema("Frankenstein 1931",LocalDateTime.of(2022, Month.OCTOBER,3,18,30,0), 71, FilmGenres.horror.toString(),262007);
-        movie[1] = new Cinema("Bride of Frankenstein", LocalDateTime.of(2022, Month.OCTOBER,3,19,40,0),75, FilmGenres.horror.toString(),397000);
+        movie[0] = new Cinema("Frankenstein 1931",LocalDateTime.of(2022, Month.OCTOBER,3,18,30,0), 71, FilmGenres.horror,262007);
+        movie[1] = new Cinema("Bride of Frankenstein", LocalDateTime.of(2022, Month.OCTOBER,3,19,40,0),75, FilmGenres.horror,397000);
         /**
          * Пример с подходящей продолжительностью, но не подходящим временем
          */
-        movie[2] = new Cinema("Bride of Reanimator", LocalDateTime.of(2022, Month.OCTOBER,4,18,0,0),101, FilmGenres.horror.toString(),3000000);
+        movie[2] = new Cinema("Bride of Reanimator", LocalDateTime.of(2022, Month.OCTOBER,4,18,0,0),101, FilmGenres.horror,3000000);
         /**
          * Подходящие примеры
          */
-        movie[3] = new Cinema("Les Miserables", LocalDateTime.of(2022, Month.OCTOBER,4,18,20,0),158, FilmGenres.musical.toString(),61000000);
-        movie[4] = new Cinema("King of Devil's Island", LocalDateTime.of(2022, Month.OCTOBER,4,22,30,0),115, FilmGenres.drama.toString(),6400000);
+        movie[3] = new Cinema("Les Miserables", LocalDateTime.of(2022, Month.OCTOBER,4,18,20,0),158, FilmGenres.musical,61000000);
+        movie[4] = new Cinema("King of Devil's Island", LocalDateTime.of(2022, Month.OCTOBER,4,22,30,0),115, FilmGenres.drama,6400000);
         /**
          * Пример с бюджетом и длительностью больше максимума
          */
-        movie[5] = new Cinema("Avatar", LocalDateTime.of(2022, Month.OCTOBER,5,12,30,0),201, FilmGenres.scifi.toString(),400000001);
+        movie[5] = new Cinema("Avatar", LocalDateTime.of(2022, Month.OCTOBER,5,12,30,0),201, FilmGenres.scifi,400000001);
         /**
          * Пример с бюджетом и длительностью меньше минимума
          */
-        movie[6] = new Cinema("Minimum", LocalDateTime.of(2022, Month.OCTOBER,5,17,30,0),20, FilmGenres.arthouse.toString(),120);
+        movie[6] = new Cinema("Minimum", LocalDateTime.of(2022, Month.OCTOBER,5,17,30,0),20, FilmGenres.arthouse,120);
         /**
          * Пример с датой ранее текущей
          */
-        movie[7] = new Cinema("WrongDate", LocalDateTime.of(2021, Month.OCTOBER,6,17,30,0),110, FilmGenres.comedy.toString(),120000);
+        movie[7] = new Cinema("WrongDate", LocalDateTime.of(2021, Month.OCTOBER,6,17,30,0),110, FilmGenres.comedy,120000);
         /**
          * Пример с незадаными значениями (кроме названия)
          */

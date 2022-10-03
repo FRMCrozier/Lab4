@@ -12,7 +12,7 @@ public class Cinema {
     public static final int MAX_BUDGET = 400000000;
     public static final LocalDateTime MIN_DATA = LocalDateTime.now();
     String title = "";
-    String genre = "";
+    FilmGenres genre;
     private int length = 0;
     private int budget = 0;
     LocalDate dt = LocalDate.now();
@@ -43,10 +43,10 @@ public class Cinema {
             this.length = length;
     }
 
-    public String getGenre(){
+    public FilmGenres getGenre(){
         return genre;
     }
-    public void setGenre(String name) { this.genre = name; }
+    public void setGenre(FilmGenres genre) { this.genre = genre; }
 
     public int getBudget(){
         return this.budget;
@@ -69,7 +69,7 @@ public class Cinema {
      */
     public Cinema(){}
 
-    public Cinema(String title, LocalDateTime seansDate, int length, String genre, int budget){
+    public Cinema(String title, LocalDateTime seansDate, int length, FilmGenres genre, int budget){
         this.title = title;
         if (seansDate.isBefore(MIN_DATA))
             this.seansDate = MIN_DATA;
