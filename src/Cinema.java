@@ -1,9 +1,5 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Month;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 public class Cinema {
     public static final int MIN_LENGTH = 30;
@@ -18,23 +14,30 @@ public class Cinema {
     LocalDate dt = LocalDate.now();
     LocalDateTime seansDate = LocalDateTime.now();
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
-    public void setTitle(String title){ this.title = title; }
 
-    public LocalDateTime getSeansDate(){return seansDate;}
-    public void setSeansDate(LocalDateTime seansDate){
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public LocalDateTime getSeansDate() {
+        return seansDate;
+    }
+
+    public void setSeansDate(LocalDateTime seansDate) {
         if (seansDate.isBefore(MIN_DATA))
             this.seansDate = MIN_DATA;
         else
             this.seansDate = seansDate;
     }
 
-    public int getLength(){
+    public int getLength() {
         return this.length;
     }
-    public void setLength(int length){
+
+    public void setLength(int length) {
         if (length < MIN_LENGTH)
             this.length = MIN_LENGTH;
         else if (length > MAX_LENGTH)
@@ -43,15 +46,19 @@ public class Cinema {
             this.length = length;
     }
 
-    public FilmGenres getGenre(){
+    public FilmGenres getGenre() {
         return genre;
     }
-    public void setGenre(FilmGenres genre) { this.genre = genre; }
 
-    public int getBudget(){
+    public void setGenre(FilmGenres genre) {
+        this.genre = genre;
+    }
+
+    public int getBudget() {
         return this.budget;
     }
-    public void setBudget(int budget){
+
+    public void setBudget(int budget) {
         if (budget < MIN_BUDGET)
             this.budget = MIN_BUDGET;
         else if (budget > MAX_BUDGET)
@@ -59,6 +66,7 @@ public class Cinema {
         else
             this.budget = budget;
     }
+
     /**
      * Средний уровень. Вариант 3. Поля класса:
      * Название фильма
@@ -67,9 +75,10 @@ public class Cinema {
      * Жанр
      * Бюджет
      */
-    public Cinema(){}
+    public Cinema() {
+    }
 
-    public Cinema(String title, LocalDateTime seansDate, int length, FilmGenres genre, int budget){
+    public Cinema(String title, LocalDateTime seansDate, int length, FilmGenres genre, int budget) {
         setTitle(title);
         setSeansDate(seansDate);
         setLength(length);
@@ -77,7 +86,7 @@ public class Cinema {
         setBudget(budget);
     }
 
-    public String ToString(){
+    public String ToString() {
         return "Movie title: " + title + "\nSession date: " + seansDate + "\nLength: " + length + " min" + "\nMovie genre: " + genre + "\nBudget: " + budget;
     }
 
