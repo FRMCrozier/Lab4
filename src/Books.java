@@ -67,24 +67,11 @@ public class Books {
     public Books(){}
 
     public Books(String author, String name, int pages, int edition, int year){
-        this.author = author;
-        this.name = name;
-        if (pages < MIN_PAGES)
-            this.pages = MIN_PAGES;
-        else if (pages > MAX_PAGES)
-            this.pages = MAX_PAGES;
-        else
-            this.pages = pages;
-        if (edition < MIN_EDITION)
-            this.edition = MIN_EDITION;
-        else
-            this.edition = edition;
-        if (year < MIN_YEAR)
-            this.year = MIN_YEAR;
-        else if (year > MAX_YEAR)
-            this.year = MAX_YEAR;
-        else
-            this.year = year;
+        setAuthor(author);
+        setName(name);
+        setPages(pages);
+        setEdition(edition);
+        setYear(year);
     }
 
     public String ToString(){

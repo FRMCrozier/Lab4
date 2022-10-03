@@ -70,24 +70,11 @@ public class Cinema {
     public Cinema(){}
 
     public Cinema(String title, LocalDateTime seansDate, int length, FilmGenres genre, int budget){
-        this.title = title;
-        if (seansDate.isBefore(MIN_DATA))
-            this.seansDate = MIN_DATA;
-        else
-            this.seansDate = seansDate;
-        if (length < MIN_LENGTH)
-            this.length = MIN_LENGTH;
-        else if (length > MAX_LENGTH)
-            this.length = MAX_LENGTH;
-        else
-            this.length = length;
-        this.genre = genre;
-        if (budget < MIN_BUDGET)
-            this.budget = MIN_BUDGET;
-        else if (budget > MAX_BUDGET)
-            this.budget = MAX_BUDGET;
-        else
-            this.budget = budget;
+        setTitle(title);
+        setSeansDate(seansDate);
+        setLength(length);
+        setGenre(genre);
+        setBudget(budget);
     }
 
     public String ToString(){
