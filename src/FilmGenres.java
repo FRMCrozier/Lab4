@@ -1,3 +1,6 @@
+/**
+ * Пример использовани Enum
+ */
 enum FilmGenres {
     horror, musical,
     crime, comedy,

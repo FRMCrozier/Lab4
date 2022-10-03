@@ -40,9 +40,6 @@ public class Main {
             System.out.print("None");
         }
     }
-    /**
-     * Пример использовани Enum
-     */
 
 
     public static void main(String[] args) {
